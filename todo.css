@@ -1,0 +1,186 @@
+/* General styling for the body */
+body {
+    font-family: 'Arial', sans-serif; /* Clean, common font */
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); /* Soft gradient background */
+    display: flex; /* Use flexbox to center the content */
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Align to the top of the viewport */
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    margin: 0; /* Remove default body margin */
+    padding-top: 50px; /* Add some space from the top */
+    color: #333; /* Default text color */
+}
+
+/* Container for the entire To-Do list app */
+.container {
+    background-color: #fff; /* White background for the app container */
+    padding: 30px; /* Inner spacing */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Soft, prominent shadow */
+    width: 100%; /* Take full width within its flex container */
+    max-width: 500px; /* Maximum width for a clean look */
+    margin: 20px; /* Margin around the container */
+    text-align: center; /* Center align text inside the container */
+}
+
+/* Heading style */
+h1 {
+    color: #4a4a4a; /* Darker heading color */
+    margin-bottom: 30px; /* Space below heading */
+    font-size: 2.5em; /* Larger font size */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05); /* Subtle text shadow */
+}
+
+/* Input section for adding new tasks */
+.input-section {
+    display: flex; /* Use flexbox to align input and button horizontally */
+    margin-bottom: 25px; /* Space below the input section */
+    gap: 10px; /* Space between input and button */
+}
+
+/* Style for the new task input field */
+#new-task-input {
+    flex-grow: 1; /* Allow input to take up available space */
+    padding: 12px 15px; /* Inner spacing */
+    border: 2px solid #ddd; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 1.1em; /* Larger font size */
+    outline: none; /* Remove outline on focus */
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+#new-task-input:focus {
+    border-color: #7b2cbf; /* Highlight border on focus */
+}
+
+/* Style for the "Add Task" button */
+#add-task-btn {
+    background: linear-gradient(90deg, #7b2cbf, #a8007a); /* Gradient background */
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 12px 25px; /* Inner spacing */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1.1em; /* Larger font size */
+    font-weight: bold; /* Bold text */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition for hover effects */
+}
+
+#add-task-btn:hover {
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 5px 15px rgba(123, 44, 191, 0.3); /* Subtle shadow on hover */
+}
+
+/* Style for the unordered list of tasks */
+#task-list {
+    list-style: none; /* Remove default bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+/* Style for individual To-Do list items */
+.task-item {
+    display: flex; /* Use flexbox for horizontal alignment of task text and buttons */
+    justify-content: space-between; /* Distribute space between text and buttons */
+    align-items: center; /* Vertically align items in the middle */
+    background-color: #f9f9f9; /* Slightly off-white background */
+    border: 1px solid #eee; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Inner spacing */
+    margin-bottom: 10px; /* Space between list items */
+    font-size: 1.1em; /* Font size for task text */
+    word-break: break-word; /* Allow long words to break and wrap */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.task-item:last-child {
+    margin-bottom: 0; /* No bottom margin for the last item */
+}
+
+/* Styles for the task text */
+.task-text {
+    flex-grow: 1; /* Allow text to take up available space */
+    text-align: left; /* Align text to the left */
+    padding-right: 15px; /* Space between text and buttons */
+}
+
+/* Style for completed tasks */
+.task-item.completed .task-text {
+    text-decoration: line-through; /* Strikethrough for completed tasks */
+    color: #888; /* Dim text color for completed tasks */
+}
+
+/* Button group for actions (Complete/Delete) */
+.task-actions {
+    display: flex; /* Use flexbox for the buttons */
+    gap: 8px; /* Space between action buttons */
+}
+
+/* General style for action buttons (Complete/Delete) */
+.action-btn {
+    background: none; /* No background */
+    border: none; /* No border */
+    font-size: 1.2em; /* Icon size */
+    cursor: pointer; /* Pointer cursor on hover */
+    padding: 5px; /* Padding around icons for clickability */
+    border-radius: 5px; /* Slightly rounded for hover effect */
+    transition: background-color 0.2s ease, color 0.2s ease; /* Smooth transitions */
+}
+
+/* Style for the "Complete" button */
+.complete-btn {
+    color: #28a745; /* Green color */
+}
+
+.complete-btn:hover {
+    background-color: #e6ffe6; /* Light green background on hover */
+    color: #218838; /* Darker green on hover */
+}
+
+/* Style for the "Delete" button */
+.delete-btn {
+    color: #dc3545; /* Red color */
+}
+
+.delete-btn:hover {
+    background-color: #ffe6e6; /* Light red background on hover */
+    color: #c82333; /* Darker red on hover */
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px; /* Reduce padding on smaller screens */
+        margin: 10px; /* Reduce margin */
+    }
+
+    h1 {
+        font-size: 2em; /* Smaller heading */
+    }
+
+    .input-section {
+        flex-direction: column; /* Stack input and button vertically */
+        gap: 15px; /* More space when stacked */
+    }
+
+    #add-task-btn {
+        width: 100%; /* Full width for the button */
+    }
+
+    .task-item {
+        flex-direction: column; /* Stack task text and buttons vertically */
+        align-items: flex-start; /* Align text to the left */
+        padding: 12px; /* Adjust padding */
+    }
+
+    .task-text {
+        width: 100%; /* Full width for text */
+        margin-bottom: 10px; /* Space below text when stacked */
+        padding-right: 0; /* Remove right padding */
+    }
+
+    .task-actions {
+        width: 100%; /* Full width for action buttons container */
+        justify-content: flex-end; /* Align buttons to the right */
+    }
+}
